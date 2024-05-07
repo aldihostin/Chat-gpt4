@@ -14,8 +14,6 @@ function getAnswer() {
     })
     .then(data => {
         if (data.status) {
-            answerElement.classList.add('show'); // Menambahkan kelas show untuk menampilkan jawaban dengan efek transisi
-          
             answerElement.innerText = data.result; // Menampilkan jawaban secara langsung
             answerElement.classList.add('show'); // Menambahkan kelas show untuk menampilkan jawaban dengan efek transisi
             // Memunculkan tombol "Kembali"
