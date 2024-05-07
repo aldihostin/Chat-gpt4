@@ -14,6 +14,8 @@ function getAnswer() {
     })
     .then(data => {
         if (data.status) {
+            answerElement.classList.add('show'); // Menambahkan kelas show untuk menampilkan jawaban dengan efek transisi
+          
             answerElement.innerText = data.result; // Menampilkan jawaban secara langsung
             answerElement.classList.add('show'); // Menambahkan kelas show untuk menampilkan jawaban dengan efek transisi
             // Memunculkan tombol "Kembali"
@@ -34,6 +36,6 @@ function resetAnswer() {
     answerElement.classList.remove('show'); // Menghapus kelas show untuk menyembunyikan jawaban dengan efek transisi
     setTimeout(() => {
         answerElement.innerText = ''; // Menghapus jawaban yang telah ditampilkan setelah efek transisi selesai
-    }, 500); // Menunggu 500 milidetik sebelum menghapus jawaban
+    }, 0.5); // Menunggu 500 milidetik sebelum menghapus jawaban
     document.getElementById("backButton").style.display = "none"; // Menyembunyikan tombol "Kembali"
 }
