@@ -1,4 +1,4 @@
-function getAnswer() {
+jlfunction getAnswer() {
     var question = document.getElementById("question").value;
     const answerElement = document.getElementById("answer");
     answerElement.innerText = ''; // Mengosongkan konten jawaban sebelum mengetik jawaban baru
@@ -22,6 +22,7 @@ function getAnswer() {
     })
     .catch(error => {
         console.error('Error:', error);
+        answerElement.innerText = "eror";
     });
 }
 
