@@ -10,12 +10,14 @@ function getAnswer() {
 
     fetch('https://aemt.me/gemini?text=' + encodeURIComponent(question.trim()))
     .then(response => {
+        console.log('Response:', response);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return response.json();
     })
     .then(data => {
+        console.log('Data:', data);
         if (data.status) {
             answerElement.innerText = data.result; // Menampilkan jawaban atau pesan kesalahan
             backButton.style.display = "block"; // Menampilkan tombol "Kembali"
@@ -29,10 +31,4 @@ function getAnswer() {
         answerElement.innerText = "Terjadi kesalahan dalam memproses permintaan. Silakan coba lagi nanti."; // Menampilkan pesan kesalahan
         searchButton.style.display = "block"; // Menampilkan tombol "Cari Jawaban"
     });
-}
-
-function resetAnswer() {
-    document.getElementById("answer").innerText = ''; // Menghapus jawaban atau pesan kesalahan yang telah ditampilkan
-    document.getElementById("backButton").style.display = "none"; // Menyembunyikan tombol "Kembali"
-    document.getElementById("searchButton").style.display = "block"; // Menampilkan kembali tombol "Cari Jawaban"
-        }
+                      }
