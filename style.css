@@ -1,60 +1,55 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #3494e6, #ec6ead);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3494e6, #ec6ead);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    overflow-y: auto; /* Menambahkan scroll vertikal */
-    max-height: 300px; /* Membatasi tinggi konten untuk menampilkan scroll */
-}
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 90%;
+        }
 
-h1 {
-    color: #333;
-    text-align: center;
-}
+        h1 {
+            color: #333;
+            text-align: center;
+        }
 
-p {
-    color: #666;
-    line-height: 1.6;
-}
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
 
-input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    text-align: center; /* Menggeser teks ke tengah */
-}
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
+        button:hover {
+            background-color: #0056b3;
+        }
 
-#answer {
-    margin-top: 20px;
-    text-align: center; /* Menggeser teks ke tengah */
-}
+        #answer {
+            margin-top: 20px;
+        }
