@@ -57,3 +57,11 @@ button:hover {
     margin-top: 20px;
     text-align: center; /* Menggeser teks ke tengah */
 }
+.answer {
+    opacity: 0; /* Awalnya diatur ke opacity 0 */
+    transition: opacity 0.5s ease; /* Transisi opacity */
+}
+
+.show {
+    opacity: 1; /* Saat kelas show ditambahkan, opacity diatur ke 1 */
+    }
