@@ -1,10 +1,13 @@
 function getAnswer() {
     var question = document.getElementById("question").value;
     const answerElement = document.getElementById("answer");
-    answerElement.innerText = ''; // Mengosongkan konten jawaban sebelum mengetik jawaban baru
     const searchButton = document.getElementById("searchButton");
     const backButton = document.getElementById("backButton");
+
+    answerElement.innerText = ''; // Mengosongkan konten jawaban sebelum mengetik jawaban baru
     searchButton.style.display = "none"; // Menyembunyikan tombol "Cari Jawaban"
+    backButton.style.display = "none"; // Menyembunyikan tombol "Kembali"
+
     fetch('https://aemt.me/gemini?text=' + encodeURIComponent(question.trim()))
     .then(response => {
         if (!response.ok) {
@@ -14,25 +17,22 @@ function getAnswer() {
     })
     .then(data => {
         if (data.status) {
-            answerElement.innerText = data.result; // Menampilkan jawaban secara langsung
-            // Mengganti tombol "Cari Jawaban" dengan tombol "Kembali"
-            searchButton.style.display = "none";
-            backButton.style.display = "block";
+            answerElement.innerText = data.result; // Menampilkan jawaban atau pesan kesalahan
+            backButton.style.display = "block"; // Menampilkan tombol "Kembali"
         } else {
-            answerElement.innerText = "Maaf, permintaan Anda tentang pertanyaan tersebut tidak dapat kami jawab.";
-            // Menampilkan kembali tombol "Cari Jawaban" jika jawaban tidak tersedia
-            searchButton.style.display = "block";
-            backButton.style.display = "none"; // Menyembunyikan tombol "Kembali"
+            answerElement.innerText = "Maaf, permintaan Anda tentang pertanyaan tersebut tidak dapat kami jawab."; // Menampilkan pesan kesalahan
+            searchButton.style.display = "block"; // Menampilkan tombol "Cari Jawaban"
         }
     })
     .catch(error => {
         console.error('Error:', error);
+        answerElement.innerText = "Terjadi kesalahan dalam memproses permintaan. Silakan coba lagi nanti."; // Menampilkan pesan kesalahan
+        searchButton.style.display = "block"; // Menampilkan tombol "Cari Jawaban"
     });
 }
 
 function resetAnswer() {
-    document.getElementById("answer").innerText = ''; // Menghapus jawaban yang telah ditampilkan
+    document.getElementById("answer").innerText = ''; // Menghapus jawaban atau pesan kesalahan yang telah ditampilkan
     document.getElementById("backButton").style.display = "none"; // Menyembunyikan tombol "Kembali"
     document.getElementById("searchButton").style.display = "block"; // Menampilkan kembali tombol "Cari Jawaban"
-}
-    
+        }
