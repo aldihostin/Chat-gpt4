@@ -23,6 +23,7 @@ async function getAnswer() {
     })
     .then(data => {
         if (data.status) {
+            answerElement.innerText = data.result; // Menampilkan jawaban secara langsung
             // Memulai efek mengetik untuk jawaban
             typeWriter(data.result, answerElement);
         } else {
